@@ -68,6 +68,22 @@
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
     <script src="Build/Build.loader.js"></script>
     <script>
+        function disableScroll(event) {
+            event.preventDefault();
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            event.returnValue = false;
+        }
+
+
+        document.addEventListener('mousedown', function(event) {
+        if (event.button === 1) {
+            disableScroll(event);
+        }
+    }, false);
+
+
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
