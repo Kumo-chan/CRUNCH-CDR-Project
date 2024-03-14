@@ -17,8 +17,13 @@
             color: #777;
             line-height: 1.8;
         }
+
         p {
             text-align: justify;
+        }
+
+        .p-center {
+            text-align: center;
         }
 
         /* Create a Parallax Effect */
@@ -54,6 +59,7 @@
 
 <!-- Container (About Section) -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+
     <div class="w3-display-position" style="white-space:nowrap; top:33%;right:100px">
         <a href="https://www.cdr-booster.ch/" target=_blank><img src="images/v1.png" width="600px"></a>
     </div>
@@ -61,9 +67,16 @@
 
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64">
+<div class="w3-content w3-container">
+    <div class="w3-display-container">
+        <div style="text-align: center;">
+
+            <img src="images/Diapositive1.PNG" alt="logo" width="200px">
+        </div>
+
+    </div>
     <p>
-        Bienvenue dans "Carbon Removal Project", un jeu novateur conçu pour sensibiliser les joueurs à l'importance de
+        Bienvenue dans "CDR Project", un jeu novateur conçu pour sensibiliser les joueurs à l'importance de
         la réduction des émissions de CO2 et à la nécessité d'adopter des comportements plus durables et respectueux de
         l'environnement. Plongez dans une expérience immersive où vous serez confronté aux défis du changement
         climatique et où vous pourrez explorer des solutions pour y faire face.
@@ -80,43 +93,43 @@
         }
 
 
-        document.addEventListener('mousedown', function(event) {
-        if (event.button === 1) {
-            disableScroll(event);
+        document.addEventListener('mousedown', function (event) {
+            if (event.button === 1) {
+                disableScroll(event);
+            }
+        }, false);
+
+
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            // Mobile device style: fill the whole browser client area with the game canvas:
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+
+            var canvas = document.querySelector("#unity-canvas");
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
+            canvas.style.position = "fixed";
+
+            document.body.style.textAlign = "left";
         }
-    }, false);
 
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Build.data",
-        frameworkUrl: "Build/Build.framework.js",
-        codeUrl: "Build/Build.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "CDR",
-        productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+            dataUrl: "Build/Build.data",
+            frameworkUrl: "Build/Build.framework.js",
+            codeUrl: "Build/Build.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "CDR",
+            productVersion: "0.1",
+            // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+            // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
     </script>
 </div>
 
-<div class="w3-content w3-container w3-padding-64">
+<div class="w3-content w3-container">
     <p>
         Dans un monde confronté à des défis environnementaux majeurs, la sensibilisation du public à l'urgence de
         réduire les émissions de dioxyde de carbone (CO2) est essentielle.
@@ -129,63 +142,85 @@
         les connaissances acquises lors du jeu en participant activement aux processus de votation à venir.
         L'augmentation des taxes sur le CO2 pourrait être soumise à la population.
     </p>
-    <h3>Pour aller plus dans les détails TODO CHange this</h3>
+    <h3 style="text-align: center">Pour aller plus dans les détails</h3>
     <p>
         Le "Carbon Dioxide Removal" (CDR) se réfère à diverses méthodes et technologies visant à réduire la
         concentration de dioxyde de carbone (CO2) dans l'atmosphère afin de lutter contre le changement climatique et
         ses effets. Voici quelques-uns des moyens de CDR les plus couramment étudiés ou utilisés :
     </p>
-    <h4>
-        Forêt
-    </h4>
     <p>
         Cette technologie consiste à capturer le CO2 émis par les sources industrielles telles que les centrales
         électriques et les usines, puis à le transporter vers des sites de stockage souterrains où il est injecté et
         stocké en toute sécurité dans des formations géologiques appropriées comme les aquifères salins ou les gisements
         de pétrole et de gaz épuisés.
     </p>
-    <img src="images/Foret.jpg" alt="">
     <h4>
-        2. Afforestation et reboisement
+        Afforestation et reboisement
     </h4>
     <p>
-        Planter des arbres et restaurer les forêts dégradées peuvent aider à absorber le CO2 de l'atmosphère pendant la
-        photosynthèse, contribuant ainsi à réduire les émissions nettes de carbone.
+        Les arbres jouent un rôle crucial dans la réduction des émissions de dioxyde de carbone (CO2) en absorbant ce
+        gaz de l'atmosphère par le biais de la photosynthèse. Ce processus naturel permet aux arbres de capturer le CO2
+        et de le convertir en oxygène, contribuant ainsi à réguler le climat et à améliorer la qualité de l'air.
+        Grâce à leurs feuilles, les arbres absorbent le CO2 présent dans l'air et l'utilisent comme matière première
+        pour produire de la nourriture, de l'eau et de l'oxygène. Cette capacité des arbres à agir comme des "puits de
+        carbone" aide à réduire les concentrations de CO2 dans l'atmosphère, limitant ainsi les effets du changement
+        climatique.
+        En plus de leur rôle dans la séquestration du carbone, les arbres fournissent également d'autres avantages
+        environnementaux, tels que la conservation de la biodiversité, la protection des sols contre l'érosion et la
+        création d'habitats pour la faune et la flore. Par conséquent, la préservation et la plantation d'arbres sont
+        des stratégies importantes dans la lutte contre le changement climatique et la promotion d'un environnement sain
+        et durable.
+
     </p>
     <h4>
-        3. Bioénergie avec capture et stockage du carbone (BECCS)
+        Filtre à co2
     </h4>
     <p>
-        Cette approche implique la production de bioénergie à partir de biomasse, comme les cultures énergétiques ou les
-        déchets agricoles, et la capture du CO2 émis pendant la combustion pour le stocker sous terre.
-    </p>
-    <img src="images/ouverture-ccs-csu.png">
-    <h4>
-        4. Développement de techniques de séquestration du carbone dans les sols
-    </h4>
-    <p>
-        Certaines pratiques agricoles et forestières peuvent augmenter la quantité de carbone stockée dans les sols,
-        comme la gestion des terres agricoles, la reforestation, et l'application de biochar.
-    </p>
-    <h4>
-        5. Élimination directe du dioxyde de carbone de l'air (DAC)
-    </h4>
-    <p>
-        Ces technologies visent à extraire le CO2 directement de l'air ambiant, souvent par des procédés chimiques ou
-        physiques, puis à le stocker sous terre ou à le réutiliser pour des applications commerciales.
-    </p>
-    <h4>
-        6. Géoingénierie
-    </h4>
-    <p>
-        Certains concepts de géoingénierie proposent des méthodes pour manipuler le climat de la Terre à grande échelle,
-        y compris des techniques pour retirer le CO2 de l'atmosphère. Cependant, ces approches sont controversées en
-        raison de leurs incertitudes et de leurs risques potentiels.
+        Le filtre à CO2 est une technologie spécialement conçue pour réduire les émissions de dioxyde de carbone (CO2)
+        provenant des sources industrielles. Ce dispositif fonctionne en interceptant le flux de gaz provenant des
+        cheminées ou des émissions industrielles et en capturant le CO2 avant qu'il ne soit libéré dans l'atmosphère.
+        Le fonctionnement de ces filtres repose souvent sur des processus chimiques ou physiques. Certains filtres
+        utilisent des solutions chimiques spéciales, appelées solvants, qui réagissent avec le CO2 pour le piéger
+        efficacement. D'autres filtres utilisent des membranes sélectives qui permettent uniquement au CO2 de passer à
+        travers, tandis que d'autres gaz sont retenus.
+        Une fois capturé, le CO2 peut être séparé du filtre et stocké de manière sécurisée, généralement dans des
+        installations de stockage souterrain ou dans des réservoirs spécialement conçus. Certains filtres à CO2
+        permettent également une utilisation directe du CO2 capturé, par exemple dans des applications industrielles ou
+        agricoles, offrant ainsi une solution doublement avantageuse pour la réduction des émissions de gaz à effet de
+        serre.
+        Les filtres à CO2 représentent une composante essentielle des stratégies visant à réduire les émissions
+        industrielles de CO2 et à lutter contre le changement climatique. En capturant efficacement le dioxyde de
+        carbone à sa source, ces filtres contribuent à atténuer les impacts néfastes des activités humaines sur notre
+        environnement et à promouvoir un avenir plus durable.
     </p>
 
-    Chaque méthode de CDR présente des avantages et des inconvénients, et leur mise en œuvre à grande échelle peut
-    nécessiter des investissements importants en termes de technologie, de ressources et de réglementation.
+    <div style="text-align: center;">
+        <img src="images/Filtre.jpg">
+    </div>
+
+    <h4>
+        Captage dans l'air co2
+    </h4>
+    <p>
+        La capture de dioxyde de carbone (CO2) dans l'air est une technologie innovante qui vise à réduire les
+        concentrations de ce gaz à effet de serre dans l'atmosphère. Ce processus repose sur l'utilisation de divers
+        dispositifs, tels que des filtres chimiques ou des matériaux absorbants, qui sont spécifiquement conçus pour
+        piéger le CO2 présent dans l'air ambiant.
+        Lorsque l'air contenant du CO2 passe à travers ces dispositifs de capture, les molécules de dioxyde de carbone
+        sont adsorbées ou réagissent avec les composants du filtre, les capturant efficacement. Certains de ces
+        dispositifs utilisent des matériaux poreux à grande surface, tels que des zeolites ou des polymères absorbants,
+        qui offrent une surface de contact maximale pour la capture du CO2.
+        Une fois que le CO2 est capturé, il peut être séparé du matériau absorbant à l'aide de différentes méthodes,
+        telles que la chaleur ou la pression, permettant ainsi de récupérer le dioxyde de carbone pur. Ce CO2 capturé
+        peut ensuite être stocké de manière sécurisée, utilisé dans des processus industriels ou même converti en
+        produits utiles, contribuant ainsi à réduire les émissions nettes de CO2 dans l'atmosphère.
+        Bien que la capture de CO2 dans l'air soit encore en développement et présente des défis techniques, elle offre
+        un potentiel prometteur pour aider à lutter contre le changement climatique en réduisant les concentrations de
+        gaz à effet de serre dans l'atmosphère et en atténuant ainsi ses effets néfastes sur notre planète.
     </p>
+    <div style="text-align: center;">
+        <img src="images/ouverture-ccs-csu.png">
+    </div>
 </div>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
@@ -197,55 +232,80 @@
         <a href="https://www.linkedin.com/company/innovation-booster-carbon-removal/" target="_blank"><i
                 class="fa fa-linkedin w3-hover-opacity"></i></a>
     </div>
-    <p>In partenership with </p>
+    <p class="p-center">In partenership with </p>
     <div class="w3-display-bottom" style="white-space:nowrap;">
-    <a href ="https://heig-vd.ch/" target="_blank"><img src="images/HEIG-VD_logotype_rouge-rvb.png" width="100px" left="20px" alt="HEIG-VD"></a>
+        <a href="https://heig-vd.ch/" target="_blank"><img src="images/HEIG-VD_logotype_rouge-rvb.png" width="100px"
+                                                           left="20px" alt="HEIG-VD"></a>
     </div>
     <br>
-    <aside id="block-5" class="widget inner-padding widget_block"><div id="wcb" class="carbonbadge">
-        <style>#wcb.carbonbadge{--b1:#0e11a8;--b2:#00ffbc;font-size:15px;text-align:center;color:var(--b1);line-height:1.15}#wcb.carbonbadge sub{vertical-align:middle;position:relative;top:.3em;font-size:.7em}#wcb #wcb_2,#wcb #wcb_a,#wcb #wcb_g{display:inline-flex;justify-content:center;align-items:center;text-align:center;font-size:1em;line-height:1.15;font-family:-apple-system,BlinkMacSystemFont,sans-serif;text-decoration:none;margin:.2em 0}#wcb #wcb_a,#wcb #wcb_g{padding:.3em .5em;border:.13em solid var(--b2)}#wcb #wcb_g{border-radius:.3em 0 0 .3em;background:#fff;border-right:0;min-width:8.2em}#wcb #wcb_a{border-radius:0 .3em .3em 0;border-left:0;background:var(--b1);color:#fff;font-weight:700;border-color:var(--b1)}#wcb.wcb-d #wcb_a{color:var(--b1);background:var(--b2);border-color:var(--b2)}#wcb.wcb-d #wcb_2{color:#fff}</style>
-        <div id="wcb_p"><span id="wcb_g">0.43g of CO<sub>2</sub></span>
-            <a id="wcb_a" target="_blank" rel="noopener" href="https://websitecarbon.com">Website Carbon</a>
+    <aside id="block-5" class="widget inner-padding widget_block">
+        <div id="wcb" class="carbonbadge">
+            <style>#wcb.carbonbadge {
+                --b1: #0e11a8;
+                --b2: #00ffbc;
+                font-size: 15px;
+                text-align: center;
+                color: var(--b1);
+                line-height: 1.15
+            }
+
+            #wcb.carbonbadge sub {
+                vertical-align: middle;
+                position: relative;
+                top: .3em;
+                font-size: .7em
+            }
+
+            #wcb #wcb_2, #wcb #wcb_a, #wcb #wcb_g {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 1em;
+                line-height: 1.15;
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                text-decoration: none;
+                margin: .2em 0
+            }
+
+            #wcb #wcb_a, #wcb #wcb_g {
+                padding: .3em .5em;
+                border: .13em solid var(--b2)
+            }
+
+            #wcb #wcb_g {
+                border-radius: .3em 0 0 .3em;
+                background: #fff;
+                border-right: 0;
+                min-width: 8.2em
+            }
+
+            #wcb #wcb_a {
+                border-radius: 0 .3em .3em 0;
+                border-left: 0;
+                background: var(--b1);
+                color: #fff;
+                font-weight: 700;
+                border-color: var(--b1)
+            }
+
+            #wcb.wcb-d #wcb_a {
+                color: var(--b1);
+                background: var(--b2);
+                border-color: var(--b2)
+            }
+
+            #wcb.wcb-d #wcb_2 {
+                color: #fff
+            }</style>
+            <div id="wcb_p"><span id="wcb_g">0.43g of CO<sub>2</sub></span>
+                <a id="wcb_a" target="_blank" rel="noopener" href="https://websitecarbon.com">Website Carbon</a>
+            </div>
         </div>
-    </div>
     </aside>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
-                     class="w3-hover-text-green">w3.css</a></p>
+    <p class="p-center">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                                      class="w3-hover-text-green">w3.css</a></p>
 </footer>
-
-<script>
-    // Modal Image Gallery
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-    }
-
-    // Change style of navbar on scroll
-    window.onscroll = function () {
-        myFunction()
-    };
-
-    function myFunction() {
-        var navbar = document.getElementById("myNavbar");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-        } else {
-            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-        }
-    }
-
-    // Used to toggle the menu on small screens when clicking on the menu button
-    function toggleFunction() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script>
 
 </body>
 </html>
